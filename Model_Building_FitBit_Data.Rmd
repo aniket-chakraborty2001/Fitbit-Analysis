@@ -1,0 +1,57 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# Installing and Loading Required Packages
+install.packages("tidyverse")
+library(tidyverse)
+library(dplyr)
+```
+
+```{r}
+# Reading FitBit.csv File from the Directory
+data = read.csv("FitBit Data.csv")
+head(data,5)
+```
+```{r}
+# Getting the Structure of the Data frame called data
+str(data)
+```
+```{r}
+# Converting the Condition Column to Factor type
+data$Condition = factor(data$Condition)
+str(data)
+```
+```{r}
+# Deselecting the Condition Column and Store it in a data frame
+data2 = data %>% select(-Condition)
+head(data2,5)
+```
+```{r}
+# Building a Multiple Linear Regression Model using only Continuous predictors. Here we consider the HealthIndex as Response variable and the other factors as Predictor variables.
+model <- lm(HealthIndex ~. , data = data2)
+summary(model)
+```
+Result of The Above Model:
+As the result is shown the Predictor BMI only has a strong linear relationship with the Response as its P value is less than the critical value we consider. The model is approximately 61 % accurate.The rest 39 % is not explained by the model. Now we will try to increase the Model Accuracy by conducting Backward Selection Method.
+
+```{r}
+# Backward Selection Method Using AIC
+model.lower = lm(data = data2 , HealthIndex ~1)
+model.upper = lm(data = data2 , HealthIndex ~.)
+model.step = step(model.upper, scope = list(lower = model.lower , upper = model.upper),direction = 'backward', k = 2)
+summary(model.step)
+round(summary(model.step)$coef,3)
+```
+```{r}
+# Backward Selection Method Using BIC
+model.lower = lm(data = data2 , HealthIndex ~1)
+model.upper = lm(data = data2 , HealthIndex ~.)
+model.step = step(model.upper, scope = list(lower = model.lower , upper = model.upper),direction = 'backward', k = log(nrow(data2)))
+summary(model.step)
+round(summary(model.step)$coef,3)
+```
+# Interpretation of Backward Selection Using AIC and BIC:
+Both the AIC and BIC method of Backward Selection gives the same result. The result is obtained at the very first time while building the Multiple Linear Regression Model. This Backward Selection method is a way to increase the accuracy of the model and simplify the model by reducing number of predictors.
