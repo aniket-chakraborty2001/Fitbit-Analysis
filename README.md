@@ -25,11 +25,11 @@ Here both R programming and Python programming language are used. So, as a resul
 The first step of any project is data analysis. It also has some sub stages. They are - EDA (Explanatory Data Analysis), Data Manipulation and Data Visualization. Here we will discuss these three steps shortly.
 
 * **EDA (Explanatory Data Analysis):** This step in the first basic step of any data analysis project. The things that comes under this step are -
-           * Reading the data in a variable called 'data' using **pandas library**
-           *  Checking the data types of the data frame's columns.
-           * Observing the Column names.
-           * Determining the shape of the data frame.
-           * Getting the first 5 rows of the data frame.
+*           Reading the data in a variable called 'data' using **pandas library**
+*           Checking the data types of the data frame's columns.
+*           Obserrving the Column names.
+*           Determining the shape of the data frame.
+*           Getting the first 5 rows of the data frame.
 
 
 
