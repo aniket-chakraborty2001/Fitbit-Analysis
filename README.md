@@ -17,18 +17,18 @@ The data set named **'FitBit Data'** is in csv format. It has 50 rows/observatio
 ## Used Packages/libraries in this project: 
 Here both R programming and Python programming language are used. So, as a result some packages of the both languages are used in this project work.
 
-* **Python Packages:** The python packages that are used in this project are -
+**Python Packages:** The python packages that are used in this project are -
   - Matplotlib.pyplot and style module from Matplotlib
   - Pandas
   - Numpy
   - Seaborn
 
-* **R Packages:** The R packages used in this project work are - **Tidyverse and dplyr library from tidyverse package**
+**R Packages:** The R packages used in this project work are - **Tidyverse and dplyr library from tidyverse package**
 
 ## Data Analysis Using Python
 The first step of any project is data analysis. It also has some sub stages. They are - EDA (Explanatory Data Analysis), Data Manipulation and Data Visualization. Here we will discuss these three steps shortly.
 
-* **EDA (Explanatory Data Analysis):**
+**EDA (Explanatory Data Analysis):**
 This step in the first basic step of any data analysis project. The things that comes under this step are -
   - Reading the data in a variable called 'data' using pandas library
   - Checking the data types of the data frame's columns.
@@ -36,13 +36,13 @@ This step in the first basic step of any data analysis project. The things that 
   - Determining the shape of the data frame.
   - Getting the first 5 rows of the data frame.
 
-* **Data Manupulation:**
+**Data Manupulation:**
 In Python the library that is mostly used for data manipulation is pandas. In this project I as a data analyst manipulates the data by performing the following operation -
   - Create a column called 'Day' in the data frame.
   - Check if there are any missing values after creating one additional column.
   - Rename the Column 'Day' to 'Person'.
 
-* **Data Visulaization:**
+**Data Visulaization:**
 This is the most important part of any data analysis project. In this step we make use of matplotlib.pyplot package , seaborn package to plot different amazing graphs, that will help us to better understand the project and inter-relations between the variables that are used in the dataset. Here, I create the following plots - 
   - Distribution of sleeping hours.
   - Distribution of heart rate hours.
@@ -62,7 +62,7 @@ This is the most important part of any data analysis project. In this step we ma
 ## Statistical Model Building using R: 
 Here I read the data set in R and by using dplyr library first, I remove the Condition column and stote in in a variable called data2. My purpose is to build a Multiple Linear Regression Model using only the continous predictors. Here I used the column 'HealthIndex' as response variable and the other variables as predictor variables (except Condition). The result we get is BMI is the only predictor that has a strong linear relationship with the 'HealthIndex' variable.
 
-* **Backward Selection Uisng AIC and BIC:** To confirm my result, I peform Backward Selection method using both AIC and BIC. The result I got is the same as the previous result. 
+**Backward Selection Uisng AIC and BIC:** To confirm my result, I peform Backward Selection method using both AIC and BIC. The result I got is the same as the previous result. 
 
 
 
